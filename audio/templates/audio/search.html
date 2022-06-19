@@ -1,0 +1,32 @@
+{% extends 'audio/base.html' %}
+
+{% block content %}
+    {% if searched %}
+        <h1 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">You Search For {{ searched }}</h1><br>
+        {% for music in music %}
+            <p class="lead" id="trailer">Music</p>
+            <div class="ratio ratio-16x9" id="video">
+                <div><iframe width="800" height="405" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="card text-bg-dark mb-3" height="300" style="max-width: 800px;" id="card">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                        <img src="{{ music.image.url }}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{music.title}}</h5>
+                            <p class="card-text">{{music.description}}</p>
+                            <p class="card-text" style="color: white; font-family: Arial, Helvetica, sans-serif;"></p> 
+                            <a type="button" href="{{music.download.url}}" class="btn btn-danger">Download</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    {% else %}
+        <h1 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">You Forgot to Make a Searched</h1><br><br>
+        <div style="text-align: center;">
+        <h3>CATEGORY</h3><br>
+        </div>
+    {% endif%}
+{% endblock %}

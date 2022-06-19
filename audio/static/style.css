@@ -1,0 +1,75 @@
+#img{
+    height: 500px;
+}
+#video{
+    display: block;
+    margin-left: 270px;
+    margin-top: 20px;
+    
+}
+#trailer{
+    font-size: larger;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#card{
+    margin-top: 400px;
+    height: 300px;
+}
+a:link{
+    text-decoration-line: none;
+    text-emphasis: none;
+    text-decoration: none;
+    text-transform: none;
+    color: black;
+}
+#image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.material-symbols-outlined:hover{
+    color: red;
+}
+
+.material-symbols-outlined {
+    color: red;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
+  
+}
+
+.text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.text-block1 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+    color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+#contain {
+    position: relative;
+}

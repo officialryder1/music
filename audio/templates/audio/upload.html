@@ -1,0 +1,18 @@
+{% extends 'audio/base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <h1>Create A New Music</h1>
+    <hr>
+    <h2>Upload Music</h2> <br>
+    <form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-success">Create</button>
+{% else %}
+<h1>Sorry! You Must Be Logged In To View This Page...</h1>
+
+<a href="{% url 'login' %}">Login Here</a>
+
+{% endif %}
+{% endblock %}

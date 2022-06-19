@@ -1,0 +1,40 @@
+{% extends 'audio/base.html' %}
+
+{% block content %}
+
+{% if country%}
+    <div class="container">
+        <p style="text-align: center; font-size: larger;" class="lead">All Songs In All {{cats}}</p>
+        <div class="row row-col-2">
+            {% for song in country %}
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ song.image.url}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ song.title }}</h5>
+                    <p class="card-text">{{ song.artist}}</p>
+                    <small class="lead" style="font-size: small;">{{ song.genre}}</small>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <form action="{% url 'like' song.pk %}" method="POST">
+                        {% csrf_token %}
+                        {% if user not in song.like.all %}
+                        <button class="btn btn-primary btn-sm" type="submit" name="song_id" value="{{song.id}}">Like</button>
+                        {% else%}
+                        <button class="btn btn-success btn-sm" type="submit" name="song_id" value="{{song.id}}">Unlike</button>
+                        {% endif %}
+                    </form>
+                    <a href="{{song.download.url}}"><span class="material-symbols-outlined">download</span></a>
+                    </div>
+                </div>
+                </div>
+            </div><br>
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <p class="lead">Sorry! Country Not In Included Try Next Time</p>
+{% endif %}
+{% endblock %}
