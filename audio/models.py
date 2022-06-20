@@ -1,8 +1,3 @@
-from email.mime import image
-import imp
-from tkinter import CASCADE
-from unicodedata import name
-from urllib.parse import _NetlocResultMixinBytes
 from django.db import models
 from django.contrib.auth.models import User
 

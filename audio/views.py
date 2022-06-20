@@ -1,12 +1,9 @@
-from multiprocessing import context
 from django.shortcuts import redirect, render, HttpResponseRedirect, get_object_or_404
-from .models import Song, Type, Like
-from django.contrib.auth.decorators import login_required
+from .models import Song, Type
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from .form import RegisterUserForm, AddMusic
 from django.contrib import messages
-from django.views.generic import ListView
 
 
 def home(request):
