@@ -37,7 +37,6 @@ class AddMusic(ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Music Title'}),
             'artist': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Artist'}),
-            'image': forms.FileInput(),
             'download': forms.FileInput(attrs={'class':'form-control', 'placeholder':'Download_link'}),
             'description': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Description'}),
             'genre': forms.Select(attrs={'class':'form-control', 'placeholder':'Genre'}),
